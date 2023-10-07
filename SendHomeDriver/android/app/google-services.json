@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "134130126302",
+    "firebase_url": "https://send-f16af-default-rtdb.firebaseio.com",
+    "project_id": "send-f16af",
+    "storage_bucket": "send-f16af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134130126302:android:21e5c81a283cf127bc614f",
+        "android_client_info": {
+          "package_name": "com.example.sendhome"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEFRA-e-inSKsjXJrTWhG8A9M8K4SHucA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134130126302:android:12d9d49ce72e8874bc614f",
+        "android_client_info": {
+          "package_name": "com.example.sendhomedriver"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEFRA-e-inSKsjXJrTWhG8A9M8K4SHucA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
