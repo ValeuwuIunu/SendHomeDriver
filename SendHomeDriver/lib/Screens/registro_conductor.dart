@@ -88,7 +88,7 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(204, 200, 236, 1.0),
       appBar: AppBar(
-        toolbarHeight: 55,
+        toolbarHeight: 40,
         titleTextStyle: const TextStyle(
           fontSize: 30.0,
           fontWeight: FontWeight.bold,
@@ -100,14 +100,17 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
       body: ListView(
         children: [
           Container(
-            padding: EdgeInsets.all(9.5),
+            padding: EdgeInsets.all(17.5),
             child: Card(
               color: Color.fromRGBO(185, 175, 224, 1.0),
               elevation: 6.0,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12.0),
               ),
-              margin: EdgeInsets.all(28.5),
+              child: Container(
+                height: 1250,
+                width: 100,
+                margin: EdgeInsets.all(15.5),
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Form(
@@ -125,7 +128,7 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                         },
                         child: CircleAvatar(
                           radius: 100,
-                          backgroundColor: Colors.deepPurpleAccent,
+                          backgroundColor: Color.fromRGBO(47, 8, 73, 0.9),
                           child: Foto_Perfil != null
                               ? ClipOval(
                             child: Image.file(
@@ -147,12 +150,12 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                         showCountryFlag: false,
                         dropdownIcon: Icon(
                           Icons.arrow_drop_down,
-                          color: Colors.deepPurpleAccent,
+                          color: Color.fromRGBO(47, 8, 73, 0.9),
                         ),
                         decoration: InputDecoration(
                           hintText: "Número",
                           hintStyle: TextStyle(
-                            color: Colors.grey,
+                            color: Colors.black54,
                           ),
                         ),
                         initialCountryCode: 'CC',
@@ -172,14 +175,14 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                             color: Colors.black,
                           ),
                           focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue),
+                            borderSide: BorderSide(color: Colors.deepPurpleAccent),
                           ),
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.black54)),
                           prefixIcon:
-                          Icon(Icons.person, color: Colors.deepPurpleAccent),
+                          Icon(Icons.person, color: Color.fromRGBO(47, 8, 73, 0.9)),
                         ),
-                        cursorColor: Colors.blue,
+                        cursorColor: Colors.deepPurpleAccent,
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -203,14 +206,14 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                             color: Colors.black,
                           ),
                           focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue),
+                            borderSide: BorderSide(color: Colors.deepPurpleAccent),
                           ),
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.black54)),
                           prefixIcon:
-                          Icon(Icons.mail, color: Colors.deepPurpleAccent),
+                          Icon(Icons.mail, color: Color.fromRGBO(47, 8, 73, 0.9)),
                         ),
-                        cursorColor: Colors.blue,
+                        cursorColor: Colors.deepPurpleAccent,
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -237,18 +240,18 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                             color: Colors.black,
                           ),
                           focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue),
+                            borderSide: BorderSide(color: Colors.deepPurpleAccent),
                           ),
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.black54)),
                           prefixIcon:
-                          Icon(Icons.password, color: Colors.deepPurpleAccent),
+                          Icon(Icons.password, color: Color.fromRGBO(47, 8, 73, 0.9)),
                           suffixIcon: IconButton(
                             icon: Icon(
                               _passwordVisible
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: Colors.deepPurpleAccent,
+                              color: Color.fromRGBO(47, 8, 73, 0.9),
                             ),
                             onPressed: () {
                               setState(() {
@@ -257,7 +260,7 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                             },
                           ),
                         ),
-                        cursorColor: Colors.blue,
+                        cursorColor: Colors.deepPurpleAccent,
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -284,18 +287,18 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                             color: Colors.black,
                           ),
                           focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue),
+                            borderSide: BorderSide(color: Colors.deepPurpleAccent),
                           ),
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.black54)),
                           prefixIcon:
-                          Icon(Icons.password, color: Colors.deepPurpleAccent),
+                          Icon(Icons.password, color: Color.fromRGBO(47, 8, 73, 0.9)),
                           suffixIcon: IconButton(
                             icon: Icon(
                               _passwordVisible
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: Colors.deepPurpleAccent,
+                              color: Color.fromRGBO(47, 8, 73, 0.9),
                             ),
                             onPressed: () {
                               setState(() {
@@ -304,7 +307,7 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                             },
                           ),
                         ),
-                        cursorColor: Colors.blue,
+                        cursorColor: Colors.deepPurpleAccent,
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -328,7 +331,7 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                       Text(
                         "Agregar imagen de licencia ",
                         style: TextStyle(
-                          color: Colors.deepPurpleAccent,
+                          color: Color.fromRGBO(47, 8, 73, 0.9),
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
@@ -343,14 +346,14 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                         },
                         child: Container(
                           margin: EdgeInsets.all(10),
-                          height: 300,
-                          width: 400,
-                          color: Colors.deepPurpleAccent,
+                          height: 200,
+                          width: 200,
+                          color: Color.fromRGBO(47, 8, 73, 0.9),
                           child: Foto_licencia != null
                               ? Image.file(
                             Foto_licencia!,
                             width: 500,
-                            height: 500,
+                            height: 300,
                             fit: BoxFit.contain,
                           )
                               : Icon(
@@ -364,7 +367,7 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                         decoration: InputDecoration(
                             hintText: "Categoria de licencia",
                             prefix:
-                            Icon(Icons.car_crash, color: Colors.deepPurpleAccent),
+                            Icon(Icons.car_crash, color: Color.fromRGBO(47, 8, 73, 0.9)),
                             filled: true,
                             fillColor: Colors.grey.shade200,
                             border: OutlineInputBorder(
@@ -388,7 +391,7 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                           });
                         },
                       ),
-                      SizedBox(height: 70.0),
+                      SizedBox(height: 30.0),
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: ElevatedButton(
@@ -405,32 +408,21 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                                 horizontal: 45.0, vertical: 10.0),
                           ),
                           child: Text(
-                            'Registrarse',
+                            'Registrar vehículo',
                             style: TextStyle(
                               fontSize: 18.0,
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 20,),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Center(
-                          child: Text(
-                            'Forgot password',
-                            style: TextStyle(
-                              color: Colors.deepPurpleAccent,
-                            ),
-                          ),
-                        ),
-                      ),
+                      SizedBox(height: 40.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             "Tienes una cuenta?",
                             style: TextStyle(
-                              color: Colors.black45,
+                              color: Color.fromRGBO(47, 8, 73, 0.9),
                               fontSize: 15,
                             ),
                           ),
@@ -443,10 +435,11 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
                                       builder: (context) => LoginScreen()));
                             },
                             child: Text(
-                              'sing In',
+                              'Ingresa',
                               style: TextStyle(
                                 fontSize: 15,
-                                color: Colors.deepPurpleAccent,
+                                color: Color.fromRGBO(74, 35, 90, 0.9),
+                                decoration: TextDecoration.underline,
                               ),
                             ),
                           ),
@@ -458,6 +451,7 @@ class _RegistrationConductorPageState extends State<RegistrationConductorPage> {
               ),
             ),
           ),
+          )
         ],
       ),
     );

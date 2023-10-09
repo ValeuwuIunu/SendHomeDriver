@@ -75,7 +75,7 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
           Icon(Icons.arrow_back_outlined, size: 30, color: Colors.black87),
           constraints: BoxConstraints.tightFor(width: 60, height: 60),
           highlightColor: Colors.cyan,
-          splashColor: Colors.blue,
+          splashColor: Colors.deepPurpleAccent,
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (c) => RegistrationConductorPage()));
           },
@@ -92,7 +92,7 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
       body: ListView(
           children: [
          Container(
-        padding: EdgeInsets.all(9.5),
+        padding: EdgeInsets.all(17.5),
         child: Card(
             color: Color.fromRGBO(185, 175, 224, 1.0), // Cambia el color de fondo
             elevation: 6.0, // Cambia la elevación y la sombra
@@ -100,11 +100,10 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
               borderRadius:
               BorderRadius.circular(12.0), // Cambia el radio de los bordes
             ),
-            margin: EdgeInsets.all(28.5),
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                maxHeight: 1500.0, // Establece la altura máxima deseada
-              ),
+            child: Container(
+              height: 1120,
+              width: 100,
+              margin: EdgeInsets.all(15.5),
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                     child: Form(
@@ -114,9 +113,9 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text(
-                            "Guardar Carro",
+                            "Agregar vehículo",
                             style: TextStyle(
-                              color: Colors.deepPurpleAccent,
+                              color: Color.fromRGBO(47, 8, 73, 0.5),
                               fontSize: 25,
                               fontWeight: FontWeight.bold,
                             ),
@@ -131,7 +130,7 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
                             },
                             child: CircleAvatar(
                               radius: 100,
-                              backgroundColor: Colors.deepPurpleAccent,
+                              backgroundColor: Color.fromRGBO(47, 8, 73, 0.5),
                               child: Foto_Carro != null
                                   ? ClipOval(
                                 child: Image.file(
@@ -152,20 +151,20 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
                           TextFormField(
                             controller: _placaController,
                             decoration: InputDecoration(
-                              hintText: 'Placa carro',
+                              hintText: 'Placa del vehículo',
                               labelStyle: TextStyle(
                                 fontSize: 20,
                                 color: Colors.black,
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: Colors.blue),
+                                    color: Colors.deepPurpleAccent),
                               ),
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(color: Colors.black54)),
-                              prefixIcon: Icon(Icons.airport_shuttle, color: Colors.deepPurpleAccent),
+                              prefixIcon: Icon(Icons.airport_shuttle, color: Color.fromRGBO(47, 8, 73, 0.5)),
                             ),
-                            cursorColor: Colors.blue,
+                            cursorColor: Colors.deepPurpleAccent,
                             autovalidateMode: AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -183,30 +182,30 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
                           TextFormField(
                             controller: _modeloController,
                             decoration: InputDecoration(
-                              hintText: 'Modelo carro',
+                              hintText: 'Modelo del vehículo',
                               labelStyle: TextStyle(
                                 fontSize: 20,
                                 color: Colors.black,
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: Colors.blue),
+                                    color: Colors.deepPurpleAccent),
                               ),
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(color: Colors.black54)),
-                              prefixIcon: Icon(Icons.airport_shuttle, color: Colors.deepPurpleAccent),
+                              prefixIcon: Icon(Icons.airport_shuttle, color: Color.fromRGBO(47, 8, 73, 0.5)),
                             ),
-                            cursorColor: Colors.blue,
+                            cursorColor: Colors.deepPurpleAccent,
                             autovalidateMode: AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return "El nombre no puede estar vacío";
+                                return "El modelo no puede estar vacío";
                               }
                               if (value.length < 2) {
-                                return "Por favor ingrese un nombre válido";
+                                return "Por favor ingrese un modelo válido";
                               }
                               if (value.length > 49) {
-                                return "El nombre no puede tener más de 50 caracteres ";
+                                return "El modelo no puede tener más de 50 caracteres ";
                               }
                             },
                           ),
@@ -214,20 +213,20 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
                           TextFormField(
                             controller: _colorController,
                             decoration: InputDecoration(
-                              hintText: 'Color carro',
+                              hintText: 'Color del vehículo',
                               labelStyle: TextStyle(
                                 fontSize: 20,
                                 color: Colors.black,
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: Colors.blue),
+                                    color: Colors.deepPurpleAccent),
                               ),
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(color: Colors.black54)),
-                              prefixIcon: Icon(Icons.format_color_fill, color: Colors.deepPurpleAccent),
+                              prefixIcon: Icon(Icons.format_color_fill, color: Color.fromRGBO(47, 8, 73, 0.5)),
                             ),
-                            cursorColor: Colors.blue,
+                            cursorColor: Colors.deepPurpleAccent,
                             autovalidateMode: AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -245,20 +244,20 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
                           TextFormField(
                             controller: _capacidadController,
                             decoration: InputDecoration(
-                              hintText: 'Capacidad carro Kg',
+                              hintText: 'Capacidad del vehículo en Kg',
                               labelStyle: TextStyle(
                                 fontSize: 20,
                                 color: Colors.black,
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: Colors.blue),
+                                    color: Colors.deepPurpleAccent),
                               ),
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(color: Colors.black54)),
-                              prefixIcon: Icon(Icons.reduce_capacity, color: Colors.deepPurpleAccent),
+                              prefixIcon: Icon(Icons.reduce_capacity, color:Color.fromRGBO(47, 8, 73, 0.5)),
                             ),
-                            cursorColor: Colors.blue,
+                            cursorColor: Colors.deepPurpleAccent,
                             autovalidateMode: AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -277,7 +276,7 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
                           Text(
                             "Agregar imagen de documento de propiedad ",
                             style: TextStyle(
-                              color: Colors.deepPurpleAccent,
+                              color: Color.fromRGBO(47, 8, 73, 0.5),
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
@@ -292,9 +291,9 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
                             },
                             child: Container(
                               margin: EdgeInsets.all(10),
-                              height: 300,
+                              height: 200,
                               width: 400,
-                              color: Colors.deepPurpleAccent,
+                              color:Color.fromRGBO(47, 8, 73, 0.5),
                               child: Foto_Documento_propiedad != null
                                   ? Image.file(
                                 Foto_Documento_propiedad!,

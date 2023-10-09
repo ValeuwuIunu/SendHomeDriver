@@ -21,6 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool _passwordVisible = false;
+  final ScrollController _scrollController = ScrollController();
 
   void _sumit() async {
     if (_formKey.currentState!.validate()) {
@@ -34,21 +35,21 @@ class _LoginScreenState extends State<LoginScreen> {
           final snap =value.snapshot;
           if(snap.value !=null){
             currentUser = auth.user;
-            await Fluttertoast.showToast(msg: "Successfully Logged In");
+            await Fluttertoast.showToast(msg: "Usted ha ingresado correctamente");
             Navigator.push(context, MaterialPageRoute(builder: (c) => MapScreenDriver()));
           }
           else{
-            await Fluttertoast.showToast(msg: "No record exist whith this email");
+            await Fluttertoast.showToast(msg: "No hay un usuario registrado con ese correo");
             firebaseAuth.signOut();
             Navigator.push(context, MaterialPageRoute(builder: (c) => SplashScreen()));
           }
         });
 
       }).catchError((errorMessage) {
-        Fluttertoast.showToast(msg: "Error occurred: \n $errorMessage");
+        Fluttertoast.showToast(msg: "Ocurrió un error, vuelve a intentarlo: \n $errorMessage");
       });
     } else {
-      Fluttertoast.showToast(msg: "Not all fields are valid");
+      Fluttertoast.showToast(msg: "No todos los campos han sido diligenciados");
     }
   }
 
@@ -62,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            toolbarHeight: 80,
+            toolbarHeight: 150,
             titleTextStyle: const TextStyle(
               fontSize: 28.0,
               fontWeight: FontWeight.bold,
@@ -72,8 +73,10 @@ class _LoginScreenState extends State<LoginScreen> {
             elevation: 0.0,
           ),
           body: SafeArea(
-            child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
               child: SingleChildScrollView(
+                controller: _scrollController, // Asigna el controlador
                 child: SizedBox(
                   width: 400,
                   height: 300,
@@ -95,13 +98,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                   color: Colors.black,
                                 ),
                                 focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.blue),
+                                  borderSide: BorderSide(color: Colors.deepPurpleAccent),
                                 ),
                                 enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(color: Colors.black54)),
-                                prefixIcon: Icon(Icons.mail, color: Colors.deepPurpleAccent),
+                                prefixIcon: Icon(Icons.mail, color: Color.fromRGBO(47, 8, 73, 0.9)),
                               ),
-                              cursorColor: Colors.blue,
+                              cursorColor: Colors.deepPurpleAccent,
                               autovalidateMode: AutovalidateMode.onUserInteraction,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
@@ -128,15 +131,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                 color: Colors.black,
                               ),
                               focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue),
+                                borderSide: BorderSide(color: Colors.deepPurpleAccent),
                               ),
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(color: Colors.black54)),
-                              prefixIcon: Icon(Icons.password, color: Colors.deepPurpleAccent),
+                              prefixIcon: Icon(Icons.password, color: Color.fromRGBO(47, 8, 73, 0.9)),
                               suffixIcon: IconButton(
                                 icon: Icon(
                                   _passwordVisible ? Icons.visibility : Icons.visibility_off,
-                                  color: Colors.deepPurpleAccent,
+                                  color: Color.fromRGBO(47, 8, 73, 0.9),
                                 ),
                                 onPressed: () {
                                   setState(() {
@@ -145,7 +148,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 },
                               ),
                             ),
-                            cursorColor: Colors.blue,
+                            cursorColor: Colors.deepPurpleAccent,
                             autovalidateMode: AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -191,9 +194,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             },
                             child: Center(
                               child: Text(
-                                'Forgot password',
+                                '¿Olvidó su contraseña?',
                                 style: TextStyle(
-                                  color: Colors.deepPurpleAccent,
+                                  color: Color.fromRGBO(47, 8, 73, 0.9),
+                                  decoration: TextDecoration.underline,
                                 ),
                               ),
                             ),
@@ -202,9 +206,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "Doesn't have an account?",
+                                "¿No tiene una cuenta?",
                                 style: TextStyle(
-                                  color: Colors.black45,
+                                  color: Color.fromRGBO(47, 8, 73, 0.9),
                                   fontSize: 15,
                                 ),
                               ),
@@ -214,10 +218,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationConductorPage()));
                                 },
                                 child: Text(
-                                  'Register',
+                                  'Regístrese',
                                   style: TextStyle(
                                     fontSize: 15,
-                                    color: Colors.deepPurpleAccent,
+                                    color: Color.fromRGBO(74, 35, 90, 0.9),
+                                    decoration: TextDecoration.underline,
                                   ),
                                 ),
                               ),
