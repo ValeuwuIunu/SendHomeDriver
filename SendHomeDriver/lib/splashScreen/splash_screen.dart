@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../Assistants/assistant_methods.dart';
 import '../Screens/LoginScreen.dart';
 import '../Screens/Mapa_conductor.dart';
-import '../Screens/Mapa_usuario.dart';
 import '../global/global.dart';
 
 
