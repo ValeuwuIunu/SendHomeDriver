@@ -8,6 +8,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sendhomedriver/global/global.dart';
+import 'package:sendhomedriver/pushNotification/push_notification_system.dart';
 
 import '../Assistants/assistant_methods.dart';
 class HomeTabPage extends StatefulWidget {
@@ -81,6 +82,7 @@ class _HomeTabPageState extends State<HomeTabPage> {
         onlineDriverData.car_color = (snap.snapshot.value as Map)["car_details"]["car_color"];
         onlineDriverData.car_model = (snap.snapshot.value as Map)["car_details"]["car_model"];
         onlineDriverData.car_capacity = (snap.snapshot.value as Map)["car_details"]["car_capacity"];
+        onlineDriverData.car_Type = (snap.snapshot.value as Map)["car_details"]["Tamaño Camion"];
 
         driverVehicleType =(snap.snapshot.value as Map)["car_details"]["Tamaño Camion"];
       }
@@ -95,6 +97,10 @@ class _HomeTabPageState extends State<HomeTabPage> {
 
     checkIfLocationPermissonAllowed();
     readCurrentDriverInformation();
+
+    PushNotificationSystem pushNotificationSystem = PushNotificationSystem();
+    pushNotificationSystem.initializeCloudMessaging(context);
+    pushNotificationSystem.generateAndGetToken();
   }
 
 

@@ -8,6 +8,7 @@ class DriverData{
   String? car_capacity;
   String? car_model;
   String? car_placa;
+  String? car_Type;
 
 
   DriverData({
@@ -20,6 +21,7 @@ class DriverData{
     this.car_color,
     this.car_model,
     this.car_placa,
+    this.car_Type,
 });
 
 }
