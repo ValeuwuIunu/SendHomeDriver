@@ -27,6 +27,8 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
 
   bool selectedTypeAceptar = false;
 
+  List<String> carTypes = ["Pequeño", "Mediano", "Grande"];
+  String? selectedCarType;
 
   _submit() async {
     if (_formKey.currentState!.validate()) {
@@ -48,6 +50,7 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
           "car_model": _modeloController.text.trim(),
           "car_color": _colorController.text.trim(),
           "car_capacity": _capacidadController.text.trim(),
+          "Tamaño Camion": selectedCarType,
           "car_image": carImageStoragePath, // Almacena la referencia a la imagen en Storage
           "document_image": documentImageStoragePath, // Almacena la referencia a la imagen en Storage
         };
@@ -308,6 +311,35 @@ class _RegistrationVehiculoPageState extends State<RegistrationVehiculoPage> {
                               ),
                             ),
                           ),
+                          DropdownButtonFormField(
+                            decoration: InputDecoration(
+                                hintText: "Tamaño carro",
+                                prefix:
+                                Icon(Icons.car_crash, color: Color.fromRGBO(47, 8, 73, 0.9)),
+                                filled: true,
+                                fillColor: Colors.grey.shade200,
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(40),
+                                    borderSide: BorderSide(
+                                      width: 0,
+                                      style: BorderStyle.none,
+                                    ))),
+                            items: carTypes.map((car) {
+                              return DropdownMenuItem(
+                                child: Text(
+                                  car,
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                value: car,
+                              );
+                            }).toList(),
+                            onChanged: (newValue) {
+                              setState(() {
+                                selectedCarType = newValue.toString();
+                              });
+                            },
+                          ),
+                          SizedBox(height: 30.0),
                           SizedBox(height: 15.0),
                           Align(
                             alignment: Alignment.bottomCenter,
