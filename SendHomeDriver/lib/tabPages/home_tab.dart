@@ -83,7 +83,6 @@ class _HomeTabPageState extends State<HomeTabPage> {
         onlineDriverData.car_model = (snap.snapshot.value as Map)["car_details"]["car_model"];
         onlineDriverData.car_capacity = (snap.snapshot.value as Map)["car_details"]["car_capacity"];
         onlineDriverData.car_Type = (snap.snapshot.value as Map)["car_details"]["Tamaño Camion"];
-
         driverVehicleType =(snap.snapshot.value as Map)["car_details"]["Tamaño Camion"];
       }
     });
@@ -97,7 +96,6 @@ class _HomeTabPageState extends State<HomeTabPage> {
 
     checkIfLocationPermissonAllowed();
     readCurrentDriverInformation();
-
     PushNotificationSystem pushNotificationSystem = PushNotificationSystem();
     pushNotificationSystem.initializeCloudMessaging(context);
     pushNotificationSystem.generateAndGetToken();
@@ -202,8 +200,8 @@ class _HomeTabPageState extends State<HomeTabPage> {
 
     Geofire.initialize("activeDrivers");
     Geofire.setLocation(currentUser!.uid, driverCurrentPosition!.latitude, driverCurrentPosition!.longitude);
-    
-    DatabaseReference ref = FirebaseDatabase.instance.ref().child("drivers").child(currentUser!.uid).child("newRideSatus");
+
+    DatabaseReference ref = FirebaseDatabase.instance.ref().child("drivers").child(currentUser!.uid).child("newRideStatus");
     
     ref.set("idle");
     ref.onValue.listen((event) { });

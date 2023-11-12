@@ -64,7 +64,7 @@ class _NotificationDialogBoxState extends State<NotificationDialogBox> {
                 children: [
                   Row(
                     children: [
-                      Image.asset("assets/origen.jpg",
+                      Image.asset("assets/origen.png",
                       width: 30,
                         height: 30,
                       ),
@@ -87,7 +87,7 @@ class _NotificationDialogBoxState extends State<NotificationDialogBox> {
 
                   Row(
                     children: [
-                      Image.asset("assets/destino.jpg",
+                      Image.asset("assets/destino.png",
                         width: 30,
                         height: 30,
                       ),
@@ -135,7 +135,7 @@ class _NotificationDialogBoxState extends State<NotificationDialogBox> {
                       child: Text(
                         "Cancel".toUpperCase(),
                         style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                         ),
                       )
                   ),
@@ -156,7 +156,7 @@ class _NotificationDialogBoxState extends State<NotificationDialogBox> {
                       child: Text(
                         "Accept".toUpperCase(),
                         style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                         ),
                       )
                   )
