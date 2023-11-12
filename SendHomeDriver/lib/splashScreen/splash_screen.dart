@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Text(
-          'Send!',
+          'Send Home!',
           style: TextStyle(
             fontSize: 50,
             fontWeight: FontWeight.bold,
