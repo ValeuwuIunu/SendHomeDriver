@@ -75,8 +75,12 @@ class AssistanMethods{
 
     directionDetailsInfo.duration_text=responseDirectionApi["routes"][0]["legs"][0]["duration"]["text"];
     directionDetailsInfo.duration_value=responseDirectionApi["routes"][0]["legs"][0]["duration"]["value"];
+    print(directionDetailsInfo.duration_text);
+    print(directionDetailsInfo.duration_value);
+    print(directionDetailsInfo.distance_text);
+    print(directionDetailsInfo.distance_value);
+    print("fin");
     return directionDetailsInfo;
-
   }
 
 
@@ -87,15 +91,16 @@ class AssistanMethods{
 
   static double calculateFareAmountFromOrginToDestination(DirectionDetailsInfo directionDetailsInfo){
     print("por_Info");
-    print(directionDetailsInfo.duration_value);
+    print(directionDetailsInfo.duration_value!);
+    print(directionDetailsInfo.distance_value!);
     double timeTravelledFareAmountPerMinute = (directionDetailsInfo.duration_value! /60)*10;
     print("por_minuto");
     print(timeTravelledFareAmountPerMinute);
-    double distanceTravelledFareAmountPerKilometer = (directionDetailsInfo.duration_value! /1000)*50;
+    double distanceTravelledFareAmountPerKilometer = (directionDetailsInfo.distance_value! /1000)*50;
     print("por_kilmetro");
     print(distanceTravelledFareAmountPerKilometer);
     double totalFareAmount = timeTravelledFareAmountPerMinute+distanceTravelledFareAmountPerKilometer;
-    double localCurrencyTotalFare = totalFareAmount*107;
+    double localCurrencyTotalFare = totalFareAmount;
 
 
     if(driverVehicleType =="Pequeño"){

@@ -276,8 +276,8 @@ class _NewTripScreenState extends State<NewTripScreen> {
       databaseReference.child("status").set("accepted");
       databaseReference.child("driverId").set(onlineDriverData.id);
       databaseReference.child("driverName").set(onlineDriverData.name);
-      databaseReference.child("driverPhone").set(onlineDriverData.id);
-      databaseReference.child("ratings").set(onlineDriverData.rating);
+      databaseReference.child("driverPhone").set(onlineDriverData.phone);
+      databaseReference.child("raitings").set(onlineDriverData.rating);
       databaseReference.child("car_details").set(onlineDriverData.car_model.toString() + " " + onlineDriverData.car_placa.toString() + " (" + onlineDriverData.car_color.toString() + ")");
       
       saveRideRequestIdToDriverHistory();
