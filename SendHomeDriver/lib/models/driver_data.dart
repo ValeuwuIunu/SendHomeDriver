@@ -4,6 +4,7 @@ class DriverData{
   String? phone;
   String? email;
   String? licencia;
+  String? rating;
   String? car_color;
   String? car_capacity;
   String? car_model;
@@ -17,6 +18,7 @@ class DriverData{
     this.phone,
     this.email,
     this.licencia,
+    this.rating,
     this.car_capacity,
     this.car_color,
     this.car_model,

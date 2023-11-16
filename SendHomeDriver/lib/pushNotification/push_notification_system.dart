@@ -90,7 +90,7 @@ class PushNotificationSystem{
       }
       else{
         Fluttertoast.showToast(msg: "This Ride Request has been cacelled");
-        //Navigator.pop(context);
+        Navigator.pop(context);
       }
     });
   }

@@ -6,6 +6,8 @@ import 'package:sendhomedriver/Assistants/assistant_methods.dart';
 import 'package:sendhomedriver/global/global.dart';
 import 'package:sendhomedriver/models/user_ride_request_information.dart';
 
+import '../Screens/new_trip_screen.dart';
+
 class NotificationDialogBox extends StatefulWidget {
   //const NotificationDialogBox({super.key});
 
@@ -187,7 +189,9 @@ class _NotificationDialogBoxState extends State<NotificationDialogBox> {
 
             //trip started now - send driver to new tripScreen
 
-            //Navigator.push(context, MaterialPageRoute(builder: (c)=>NewTripScreen()));
+            Navigator.push(context, MaterialPageRoute(builder: (c)=>NewTripScreen(
+              userRideRequestInformation: widget.userRideRequestInformation,
+            )));
           }else{
             Fluttertoast.showToast(msg: "This Ride Request do not exist");
           }

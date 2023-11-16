@@ -75,8 +75,6 @@ class AssistanMethods{
 
     directionDetailsInfo.duration_text=responseDirectionApi["routes"][0]["legs"][0]["duration"]["text"];
     directionDetailsInfo.duration_value=responseDirectionApi["routes"][0]["legs"][0]["duration"]["value"];
-
-
     return directionDetailsInfo;
 
   }
@@ -86,5 +84,47 @@ class AssistanMethods{
     streamSubscriptionPosition!.pause();
     Geofire.removeLocation(firebaseAuth.currentUser!.uid);
   }
+
+  static double calculateFareAmountFromOrginToDestination(DirectionDetailsInfo directionDetailsInfo){
+    print("por_Info");
+    print(directionDetailsInfo.duration_value);
+    double timeTravelledFareAmountPerMinute = (directionDetailsInfo.duration_value! /60)*10;
+    print("por_minuto");
+    print(timeTravelledFareAmountPerMinute);
+    double distanceTravelledFareAmountPerKilometer = (directionDetailsInfo.duration_value! /1000)*50;
+    print("por_kilmetro");
+    print(distanceTravelledFareAmountPerKilometer);
+    double totalFareAmount = timeTravelledFareAmountPerMinute+distanceTravelledFareAmountPerKilometer;
+    double localCurrencyTotalFare = totalFareAmount*107;
+
+
+    if(driverVehicleType =="Pequeño"){
+      double resultFareAmount = ((localCurrencyTotalFare.truncate())*0.8);
+      print("C-------");
+      print(resultFareAmount);
+      print("C-------");
+      resultFareAmount;
+    }
+    else if(driverVehicleType =="Mediano"){
+      double resultFareAmount = ((localCurrencyTotalFare.truncate())*1.5);
+      print("C-------");
+      print(resultFareAmount);
+      print("C-------");
+      resultFareAmount;
+    }
+    else if(driverVehicleType =="Grande"){
+      double resultFareAmount = ((localCurrencyTotalFare.truncate())*2);
+      print("C-------");
+      print(resultFareAmount);
+      print("C-------");
+      resultFareAmount;
+    }
+    else{
+      return localCurrencyTotalFare.truncate().toDouble();
+    }
+    return localCurrencyTotalFare.truncate().toDouble();
+  }
+
+
 
 }
