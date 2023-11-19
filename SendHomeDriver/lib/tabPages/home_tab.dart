@@ -62,6 +62,9 @@ class _HomeTabPageState extends State<HomeTabPage> {
     print("This is our addres = " + humanRedableAdress );
 
 
+    AssistanMethods.readDriverRatings(context);
+
+
   }
 
   readCurrentDriverInformation()async{
@@ -87,6 +90,8 @@ class _HomeTabPageState extends State<HomeTabPage> {
         driverVehicleType =(snap.snapshot.value as Map)["car_details"]["Tamaño Camion"];
       }
     });
+
+    AssistanMethods.readDriverEarnings(context);
   }
   
   
