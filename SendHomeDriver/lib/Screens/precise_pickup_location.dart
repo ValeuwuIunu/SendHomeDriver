@@ -145,7 +145,7 @@ class _PrecisePickUpScreenState extends State<PrecisePickUpScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                child: Text("Set current Location"),
+                child: Text("Dar ubicación actual"),
               ),
             ) ,
           ),

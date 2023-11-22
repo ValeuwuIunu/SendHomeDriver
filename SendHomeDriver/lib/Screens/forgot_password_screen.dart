@@ -23,9 +23,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     firebaseAuth.sendPasswordResetEmail(
         email: _correoController.text.trim()
     ).then((value) {
-      Fluttertoast.showToast(msg: "We have send you an email torecover password,please check email");
+      Fluttertoast.showToast(msg: "Te hemos enviado un correo para reestablecer tu contraseña");
     }).onError((error, stackTrace){
-      Fluttertoast.showToast(msg: "Error Ocurred: \n ${error.toString()}");
+      Fluttertoast.showToast(msg: "Ha ocurrido un error: \n ${error.toString()}");
     });
   }
 
@@ -125,7 +125,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             onTap: (){},
                             child:Center(
                               child: Text(
-                                'Forgot password?',
+                                '¿Olvidó su contraseña?',
                                 style: TextStyle(
                                   color: Colors.deepPurpleAccent,
                                 ),
@@ -136,7 +136,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "Already have an acount?",
+                                "¿No tiene una cuenta?",
                                 style: TextStyle(
                                   color:Colors.black45,
                                   fontSize: 15,
@@ -148,7 +148,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                   Navigator.push(context, MaterialPageRoute(builder: (c)=>LoginScreen()));
                                 },
                                 child: Text(
-                                  ' Login',
+                                  ' Ingresar',
                                   style: TextStyle(
                                     fontSize: 15,
                                     color: Colors.deepPurpleAccent,

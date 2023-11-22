@@ -41,13 +41,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
           DatabaseReference userRef = FirebaseDatabase.instance.ref().child("users");
           userRef.child(currentUser!.uid).set(userMap);
         }
-        await Fluttertoast.showToast(msg: "Successfully Registered");
+        await Fluttertoast.showToast(msg: "Registrado exitosamente");
         Navigator.push(context, MaterialPageRoute(builder: (c) => LoginScreen()));
       }).catchError((errorMessage) {
-        Fluttertoast.showToast(msg: "Error occurred: \n $errorMessage");
+        Fluttertoast.showToast(msg: "Ocurrió un error: \n $errorMessage");
       });
     } else {
-      Fluttertoast.showToast(msg: "Not all fields are valid");
+      Fluttertoast.showToast(msg: "No todos los campos han sido digitados");
     }
   }
 
@@ -245,16 +245,16 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return "El Clave no puede estar vacío";
+                            return "La contraseña no puede estar vacía";
                           }
                           if (value != _passwordUserController.text) {
-                            return "El Password no coincide";
+                            return "La contraseña no coincide";
                           }
                           if (value.length < 2) {
                             return "Por favor ingrese una clave válida";
                           }
                           if (value.length > 99) {
-                            return "La Clave no puede tener más de 100 caracteres ";
+                            return "La clave no puede tener más de 100 caracteres ";
                           }
                         },
                         onChanged: (value) => setState(() {
@@ -290,7 +290,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         onTap: (){},
                         child: Center(
                           child: Text(
-                            'Forgot password',
+                            '¿Olvidó contraseña?',
                             style: TextStyle(
                               color: Colors.deepPurpleAccent,
                             ),
@@ -313,7 +313,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               Navigator.push(context,MaterialPageRoute(builder: (context) => LoginScreen()));
                             },
                             child: Text(
-                              'sing In',
+                              'Registrese',
                               style: TextStyle(
                                 fontSize: 15,
                                 color: Colors.deepPurpleAccent,

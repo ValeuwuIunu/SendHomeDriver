@@ -135,7 +135,7 @@ class _NotificationDialogBoxState extends State<NotificationDialogBox> {
                         primary: Colors.red
                       ),
                       child: Text(
-                        "Cancel".toUpperCase(),
+                        "Cancelar".toUpperCase(),
                         style: TextStyle(
                           fontSize: 14,
                         ),
@@ -156,7 +156,7 @@ class _NotificationDialogBoxState extends State<NotificationDialogBox> {
                           primary: Colors.green
                       ),
                       child: Text(
-                        "Accept".toUpperCase(),
+                        "Aceptar".toUpperCase(),
                         style: TextStyle(
                           fontSize: 14,
                         ),
@@ -193,7 +193,7 @@ class _NotificationDialogBoxState extends State<NotificationDialogBox> {
               userRideRequestInformation: widget.userRideRequestInformation,
             )));
           }else{
-            Fluttertoast.showToast(msg: "This Ride Request do not exist");
+            Fluttertoast.showToast(msg: "Este acarreo es inexistente");
           }
 
     });

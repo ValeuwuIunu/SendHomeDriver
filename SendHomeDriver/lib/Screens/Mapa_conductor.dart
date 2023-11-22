@@ -50,10 +50,10 @@ class _MapScreenDriverState extends State<MapScreenDriver>  with SingleTickerPro
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.credit_card),label: "Earnings"),
-          BottomNavigationBarItem(icon: Icon(Icons.star),label: "Ratings"),
-          BottomNavigationBarItem(icon: Icon(Icons.person),label: "Account"),
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: "Casa"),
+          BottomNavigationBarItem(icon: Icon(Icons.credit_card),label: "Ingresos"),
+          BottomNavigationBarItem(icon: Icon(Icons.star),label: "Calificaciones"),
+          BottomNavigationBarItem(icon: Icon(Icons.person),label: "Cuenta"),
         ],
         unselectedItemColor: Colors.white54,
         selectedItemColor: Colors.white,

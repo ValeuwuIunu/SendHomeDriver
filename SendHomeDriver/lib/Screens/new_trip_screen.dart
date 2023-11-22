@@ -35,7 +35,7 @@ class _NewTripScreenState extends State<NewTripScreen> {
     zoom: 14.4746,
   );
 
-  String? buttonTitle = "Arrived";
+  String? buttonTitle = "Llegando";
   Color? buttonColor = Colors.green;
 
   Set<Marker> setOfMarkers = Set<Marker>();
@@ -67,7 +67,7 @@ class _NewTripScreenState extends State<NewTripScreen> {
 
     showDialog(
         context: context,
-        builder: (BuildContext context) => ProgresDialog(message: "Please wait. . . .",)
+        builder: (BuildContext context) => ProgresDialog(message: "Por favor, espera. . .",)
     );
 
     var directionDetailsInfo = await AssistanMethods.obtainOriginToDestinationDirectionDetails(originLatLng, destinationLatLng);
@@ -193,7 +193,7 @@ class _NewTripScreenState extends State<NewTripScreen> {
           markerId: MarkerId("AnimatedMarker"),
         position: latLngLiveDriverPosition,
         icon: iconAnimatedMaker!,
-        infoWindow: InfoWindow(title: "This is your position")
+        infoWindow: InfoWindow(title: "Esta es tu ubicación")
       );
       
       setState(() {
@@ -283,7 +283,7 @@ class _NewTripScreenState extends State<NewTripScreen> {
       saveRideRequestIdToDriverHistory();
     }
     else{
-      Fluttertoast.showToast(msg: "This ride is already accepted by another driver. \n Reloading the App");
+      Fluttertoast.showToast(msg: "Este acarreo ha sido tomado por otro conductor. \n Recargando");
     Navigator.push(context, MaterialPageRoute(builder: (c) => SplashScreen()));
     }
 
@@ -301,7 +301,7 @@ class _NewTripScreenState extends State<NewTripScreen> {
     showDialog(
         context: context,
         barrierDismissible: false,
-        builder: (BuildContext) => ProgresDialog(message: "Please wait...",)
+        builder: (BuildContext) => ProgresDialog(message: "Por favor espere...",)
     );
 
     var currentDriverPositionLatLng = LatLng(onlineDriverCurrentPosition!.latitude, onlineDriverCurrentPosition!.longitude);
@@ -496,14 +496,14 @@ class _NewTripScreenState extends State<NewTripScreen> {
                                 FirebaseDatabase.instance.ref().child("All Ride Requests").child(widget.userRideRequestInformation!.rideRequestId!).child("status").set(rideRequestStatus);
 
                                 setState(() {
-                                  buttonTitle = "Let's Go";
+                                  buttonTitle = "Vamos";
                                   buttonColor = Colors.lightGreen;
                                 });
 
                                 showDialog(
                                     context: context,
                                     barrierDismissible: false,
-                                    builder: (BuildContext context) =>  ProgresDialog(message: "Loading...",)
+                                    builder: (BuildContext context) =>  ProgresDialog(message: "Cargando...",)
                                 );
 
                                 await drawPolylineFromOriginToDestination(
@@ -522,7 +522,7 @@ class _NewTripScreenState extends State<NewTripScreen> {
                                 FirebaseDatabase.instance.ref().child("All Ride Requests").child(widget.userRideRequestInformation!.rideRequestId!).child("status").set(rideRequestStatus);
 
                                 setState(() {
-                                  buttonTitle = "End Trip";
+                                  buttonTitle = "Finalizar acarreo";
                                   buttonColor = Colors.red;
                                 });
                               }
